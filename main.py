@@ -42,22 +42,12 @@ def compute_a(x_list, y_list, b):
 
     return y_bar - (b * x_bar)
 
-def flatten_list(*args):
-    flattened_list = []
-    
-    for arg in args:
-        if isinstance(arg, list):
-            for i in arg:
-                flattened_list.append(i)
-
-    return flattened_list
-
 def method_of_least_squares(x1, x2, y1, y2):
     # ∑Y=na+b∑X
     # ∑XY=a∑X+b∑X2
 
-    all_x = flatten_list(x1, x2)
-    all_y = flatten_list(y1, y2)
+    all_x = x1 + x2
+    all_y = y1 + y2
 
     b = compute_b(all_x, all_y)
     a = compute_a(all_x, all_y, b)
@@ -109,7 +99,7 @@ def create_plot(plot_data, title, categories):
             b = y 
 
             print('plot_data: ', plot_data)
-            all_x = flatten_list(plot_data[0][0], plot_data[1][0])
+            all_x = plot_data[0][0] + plot_data[1][0]
 
             x_plot = []
 
