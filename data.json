@@ -1,184 +1,182 @@
-{
-    "data": [
-        {
-            "year": "1980", 
-            "candidate": "Ronald Reagan", 
-            "party": "Republican", 
-            "receipts": 62944165,
-            "disbursements": 59916222,
-            "popular_votes": 43642639,
-            "electoral_votes":  489
-        },
-        {
-            "year": "1980", 
-            "candidate": "Jimmy Carter", 
-            "party": "Democratic", 
-            "receipts": 19828843,
-            "disbursements": 36227719,
-            "popular_votes": 35480948,
-            "electoral_votes":  49
-        },
-        {
-            "year": "1984", 
-            "candidate": "Ronald Reagan", 
-            "party": "Republican", 
-            "receipts": 76476619,
-            "disbursements": 77202274,
-            "popular_votes": 54455075,
-            "electoral_votes": 525
-        },
-        {
-            "year": "1984", 
-            "candidate": "Walter Mondale", 
-            "party": "Democratic", 
-            "receipts": 82879728,
-            "disbursements": 79040445,
-            "popular_votes": 37577185,
-            "electoral_votes": 13
-        },
-        {
-            "year": "1988", 
-            "candidate": "George H.W Bush", 
-            "party": "Republican", 
-            "receipts": 91349615,
-            "disbursements": 88752522,
-            "popular_votes": 48886097,
-            "electoral_votes": 426
-        },
-        {
-            "year": "1988", 
-            "candidate": "Michael Dukakis", 
-            "party": "Democratic", 
-            "receipts": 90096557,
-            "disbursements": 87924737,
-            "popular_votes": 41809074,
-            "electoral_votes": 111
-        },
-        {
-            "year": "1992", 
-            "candidate": "George H.W Bush", 
-            "party": "Republican", 
-            "receipts": 101936902,
-            "disbursements": 100537291,
-            "popular_votes": 39104545,
-            "electoral_votes": 168
-        },
-        {
-            "year": "1992", 
-            "candidate": "Bill Clinton", 
-            "party": "Democratic", 
-            "receipts": 115261535,
-            "disbursements": 107876226,
-            "popular_votes": 44909889,
-            "electoral_votes": 370
-        },
-        {
-            "year": "1996", 
-            "candidate": "Bob Dole", 
-            "party": "Republican", 
-            "receipts": 144270922.54,
-            "disbursements": 140638827.15,
-            "popular_votes": 39198755,
-            "electoral_votes": 159
-        },
-        {
-            "year": "1996", 
-            "candidate": "Bill Clinton", 
-            "party": "Democratic", 
-            "receipts": 123935797,
-            "disbursements": 123646881,
-            "popular_votes": 47402357,
-            "electoral_votes": 379
-        },
-        {
-            "year": "2000", 
-            "candidate": "George W. Bush", 
-            "party": "Republican", 
-            "receipts": 193657728.80,
-            "disbursements": 186455991.55,
-            "popular_votes": 50456002,
-            "electoral_votes": 271
-        },
-        {
-            "year": "2000", 
-            "candidate": "Al Gore", 
-            "party": "Democratic", 
-            "receipts": 133108037,
-            "disbursements": 120335203,
-            "popular_votes": 50999897,
-            "electoral_votes": 266
-        },
-        {
-            "year": "2004", 
-            "candidate": "George W. Bush", 
-            "party": "Republican", 
-            "receipts": 377846444.37,
-            "disbursements": 365729978.73,
-            "popular_votes": 62028285,
-            "electoral_votes": 286
-        },
-        {
-            "year": "2004", 
-            "candidate": "John Kerry", 
-            "party": "Democratic", 
-            "receipts": 351598273.53,
-            "disbursements": 332804117.79,
-            "popular_votes": 59028109,
-            "electoral_votes": 251
-        },
-        {
-            "year": "2008", 
-            "candidate": "John McCain", 
-            "party": "Republican", 
-            "receipts": 401537140.35,
-            "disbursements": 375159299.94,
-            "popular_votes": 59934000,
-            "electoral_votes": 173
-        },
-        {
-            "year": "2008", 
-            "candidate": "Barack Obama", 
-            "party": "Democratic", 
-            "receipts": 778642962.27,
-            "disbursements": 760370195.37,
-            "popular_votes": 69456000,
-            "electoral_votes": 365
-        },
-        {
-            "year": "2012", 
-            "candidate": "Mitt Romney", 
-            "party": "Republican", 
-            "receipts": 483642897.19,
-            "disbursements": 483292209.77,
-            "popular_votes": 60589084,
-            "electoral_votes": 206
-        },
-        {
-            "year": "2012", 
-            "candidate": "Barack Obama", 
-            "party": "Democratic", 
-            "receipts": 742601913.88,
-            "disbursements": 757574968.34,
-            "popular_votes": 65446032,
-            "electoral_votes": 332
-        },
-        {
-            "year": "2016", 
-            "candidate": "Donald Trump", 
-            "party": "Republican", 
-            "receipts": 350668435.80,
-            "disbursements": 343056732.78,
-            "popular_votes": 62979636,
-            "electoral_votes": 304
-        },
-        {
-            "year": "2016", 
-            "candidate": "Hillary Clinton", 
-            "party": "Democratic", 
-            "receipts": 585699061.27,
-            "disbursements": 585580576.76,
-            "popular_votes": 65844610,
-            "electoral_votes": 227
-        }
-    ]
-}
+[
+    {
+        "year": "1980", 
+        "candidate": "Ronald Reagan", 
+        "party": "Republican", 
+        "receipts": 62944165,
+        "disbursements": 59916222,
+        "popular_votes": 43642639,
+        "electoral_votes":  489
+    },
+    {
+        "year": "1980", 
+        "candidate": "Jimmy Carter", 
+        "party": "Democratic", 
+        "receipts": 19828843,
+        "disbursements": 36227719,
+        "popular_votes": 35480948,
+        "electoral_votes":  49
+    },
+    {
+        "year": "1984", 
+        "candidate": "Ronald Reagan", 
+        "party": "Republican", 
+        "receipts": 76476619,
+        "disbursements": 77202274,
+        "popular_votes": 54455075,
+        "electoral_votes": 525
+    },
+    {
+        "year": "1984", 
+        "candidate": "Walter Mondale", 
+        "party": "Democratic", 
+        "receipts": 82879728,
+        "disbursements": 79040445,
+        "popular_votes": 37577185,
+        "electoral_votes": 13
+    },
+    {
+        "year": "1988", 
+        "candidate": "George H.W Bush", 
+        "party": "Republican", 
+        "receipts": 91349615,
+        "disbursements": 88752522,
+        "popular_votes": 48886097,
+        "electoral_votes": 426
+    },
+    {
+        "year": "1988", 
+        "candidate": "Michael Dukakis", 
+        "party": "Democratic", 
+        "receipts": 90096557,
+        "disbursements": 87924737,
+        "popular_votes": 41809074,
+        "electoral_votes": 111
+    },
+    {
+        "year": "1992", 
+        "candidate": "George H.W Bush", 
+        "party": "Republican", 
+        "receipts": 101936902,
+        "disbursements": 100537291,
+        "popular_votes": 39104545,
+        "electoral_votes": 168
+    },
+    {
+        "year": "1992", 
+        "candidate": "Bill Clinton", 
+        "party": "Democratic", 
+        "receipts": 115261535,
+        "disbursements": 107876226,
+        "popular_votes": 44909889,
+        "electoral_votes": 370
+    },
+    {
+        "year": "1996", 
+        "candidate": "Bob Dole", 
+        "party": "Republican", 
+        "receipts": 144270922.54,
+        "disbursements": 140638827.15,
+        "popular_votes": 39198755,
+        "electoral_votes": 159
+    },
+    {
+        "year": "1996", 
+        "candidate": "Bill Clinton", 
+        "party": "Democratic", 
+        "receipts": 123935797,
+        "disbursements": 123646881,
+        "popular_votes": 47402357,
+        "electoral_votes": 379
+    },
+    {
+        "year": "2000", 
+        "candidate": "George W. Bush", 
+        "party": "Republican", 
+        "receipts": 193657728.80,
+        "disbursements": 186455991.55,
+        "popular_votes": 50456002,
+        "electoral_votes": 271
+    },
+    {
+        "year": "2000", 
+        "candidate": "Al Gore", 
+        "party": "Democratic", 
+        "receipts": 133108037,
+        "disbursements": 120335203,
+        "popular_votes": 50999897,
+        "electoral_votes": 266
+    },
+    {
+        "year": "2004", 
+        "candidate": "George W. Bush", 
+        "party": "Republican", 
+        "receipts": 377846444.37,
+        "disbursements": 365729978.73,
+        "popular_votes": 62028285,
+        "electoral_votes": 286
+    },
+    {
+        "year": "2004", 
+        "candidate": "John Kerry", 
+        "party": "Democratic", 
+        "receipts": 351598273.53,
+        "disbursements": 332804117.79,
+        "popular_votes": 59028109,
+        "electoral_votes": 251
+    },
+    {
+        "year": "2008", 
+        "candidate": "John McCain", 
+        "party": "Republican", 
+        "receipts": 401537140.35,
+        "disbursements": 375159299.94,
+        "popular_votes": 59934000,
+        "electoral_votes": 173
+    },
+    {
+        "year": "2008", 
+        "candidate": "Barack Obama", 
+        "party": "Democratic", 
+        "receipts": 778642962.27,
+        "disbursements": 760370195.37,
+        "popular_votes": 69456000,
+        "electoral_votes": 365
+    },
+    {
+        "year": "2012", 
+        "candidate": "Mitt Romney", 
+        "party": "Republican", 
+        "receipts": 483642897.19,
+        "disbursements": 483292209.77,
+        "popular_votes": 60589084,
+        "electoral_votes": 206
+    },
+    {
+        "year": "2012", 
+        "candidate": "Barack Obama", 
+        "party": "Democratic", 
+        "receipts": 742601913.88,
+        "disbursements": 757574968.34,
+        "popular_votes": 65446032,
+        "electoral_votes": 332
+    },
+    {
+        "year": "2016", 
+        "candidate": "Donald Trump", 
+        "party": "Republican", 
+        "receipts": 350668435.80,
+        "disbursements": 343056732.78,
+        "popular_votes": 62979636,
+        "electoral_votes": 304
+    },
+    {
+        "year": "2016", 
+        "candidate": "Hillary Clinton", 
+        "party": "Democratic", 
+        "receipts": 585699061.27,
+        "disbursements": 585580576.76,
+        "popular_votes": 65844610,
+        "electoral_votes": 227
+    }
+]
