@@ -5,64 +5,89 @@
     # https://www.britannica.com/topic/United-States-Presidential-Election-Results-1788863
 
 import json 
+import math
 import statistics 
 import matplotlib.pyplot as plt
 
 
-def compute_b(x_list, y_list):
-    assert len(x_list) == len(y_list)
-    
-    # b = (∑XY−((∑X)(∑Y)/n)) / ∑X**2−((∑X)2n)
-    
-    summation_x_times_y = 0
-    summation_x_squared = 0
-    n = len(x_list)
-    
-    # Iterate through x_list and y_list
-        # multiply x * y
-        # add to summation_x_times_y
-    for x, y in zip(x_list, y_list):
-        summation_x_times_y += x * y 
-    
-    for i in x_list:
-        summation_x_squared += x**2
+def least_squares_linear(x_list, y_list):
+    def compute_a(x_list, y_list, b):
+        x_bar = statistics.mean(x_list)
+        y_bar = statistics.mean(y_list)
 
-    print('Numerator: ')
-    print(summation_x_times_y, sum(x_list), sum(y_list), n)
-    numerator = summation_x_times_y - (sum(x_list) * sum(y_list) / n)
-    print('Denominator: ')
-    print(summation_x_squared, (sum(x_list)**2), n)
-    denomimator = summation_x_squared - ((sum(x_list)**2) / n)
+        return y_bar - (b * x_bar)
 
-    return numerator / denomimator
+    def compute_b(x_list, y_list):
+        assert len(x_list) == len(y_list)
 
-def compute_a(x_list, y_list, b):
-    x_bar = statistics.mean(x_list)
-    y_bar = statistics.mean(y_list)
+        summation_x_times_y = 0
+        summation_x_squared = 0
+        n = len(x_list)
 
-    return y_bar - (b * x_bar)
+        for x, y in zip(x_list, y_list):
+            summation_x_times_y += x * y 
 
-def method_of_least_squares(x1, x2, y1, y2):
-    # ∑Y=na+b∑X
-    # ∑XY=a∑X+b∑X2
+        for i in x_list:
+            summation_x_squared += x**2
 
-    all_x = x1 + x2
-    all_y = y1 + y2
+        numerator = summation_x_times_y - (sum(x_list) * sum(y_list) / n)
+        denomimator = summation_x_squared - ((sum(x_list)**2) / n)
 
-    b = compute_b(all_x, all_y)
-    a = compute_a(all_x, all_y, b)
-   
-    print('a: ', a)
-    print('b: ', b)
+        return numerator / denomimator
+
+    b = compute_b(x_list, y_list)
+    a = compute_a(x_list, y_list, b)
+
+    return (a, b)
+
+def least_squares_exponential(x_list, y_list):
+    def compute_a(x_list, y_list, b):
+        assert len(x_list) == len(y_list)
+        n = len(x_list)
+        
+        summation_ln_y = 0
+        for y in y_list:
+            summation_ln_y += math.log(y)
+        
+        summation_x = sum(x_list)
+
+        return ((1 / n) * (summation_ln_y)) - ((b / n) * summation_x)
+
+    def compute_b(x_list, y_list):
+        assert len(x_list) == len(y_list)
+        n = len(x_list)
+
+        summation_x_ln_y = 0
+        for x, y in zip(x_list, y_list):
+            summation_x_ln_y += x * math.log(y)
+
+        summation_x = sum(x_list)
+
+        summation_ln_y = 0
+        for y in y_list:
+            summation_ln_y += math.log(y)
+
+        summation_x_squared = 0
+        for x in x_list:
+            summation_x_squared += x**2
+
+        numerator = (n * summation_x_ln_y) - (summation_x * summation_ln_y)
+        denominator = (n * summation_x_squared) - summation_x**2
+
+        return numerator/denominator
+
+    b = compute_b(x_list, y_list)
+    a = compute_a(x_list, y_list, b)
 
     return (a, b)
 
 
-def get_data(json_data, **kwargs):
+def get_data(json_data, _type, **kwargs):
     republican_x = []
     republican_y = []
     democrat_x = []
     democrat_y = []
+    least_squares_line = ()
 
     for d in json_data:
         x_data = d[kwargs["x"]]
@@ -80,15 +105,23 @@ def get_data(json_data, **kwargs):
 
     republican_data = (republican_x, republican_y)
     democrat_data = (democrat_x, democrat_y)
-    least_squares_line = method_of_least_squares(republican_x, democrat_x, republican_y, democrat_y)
+    all_x = republican_x + democrat_x
+    all_y = republican_y + democrat_y
+
+    if _type == 'LINEAR':
+        least_squares_line = least_squares_linear(all_x, all_y)
+    
+    if _type == 'EXPONENTIAL':
+        least_squares_line = least_squares_exponential(all_x, all_y)
     
     return (republican_data, democrat_data, least_squares_line)
 
-def create_plot(plot_data, title, categories):
+def create_plot(plot_data, title, categories, _type):
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1, axisbg="1.0")
     colors = ("red", "blue", "green")
     groups = ("Republican", "Democrat", "Least Squares Line")
+    regression_line_equation = ''
     
     for i, (ith_plot_data, color, group) in enumerate(zip(plot_data, colors, groups)):
         x, y = ith_plot_data
@@ -98,7 +131,6 @@ def create_plot(plot_data, title, categories):
             a = x 
             b = y 
 
-            print('plot_data: ', plot_data)
             all_x = plot_data[0][0] + plot_data[1][0]
 
             x_plot = []
@@ -107,13 +139,17 @@ def create_plot(plot_data, title, categories):
             x_increments = x_range / len(all_x)
 
             x_plot = list(range(0, int(max(all_x)), int(x_increments)))
-            y_plot = [a + (b * _x) for _x in x_plot]
-
-            print('{} + ({} * x)'.format(a, b))
+            y_plot = []
+            
+            if _type == 'LINEAR':
+                y_plot = [a + (b * _x) for _x in x_plot]
+                regression_line_equation = 'y = {}x + {}'.format(b, a)
+            if _type == 'EXPONENTIAL':
+                y_plot = [math.e**(a + b * _x) for _x in x_plot]
+                regression_line_equation = 'y = e^({} + {}x)'.format(a, b)
 
             plt.plot(x_plot, y_plot, 'm-')
 
-    regression_line_equation = 'y = {}x + {}'.format(plot_data[2][1], plot_data[2][0])
 
     plt.ylabel(categories["y"])
     plt.xlabel('{}\n{}'.format(categories["x"], regression_line_equation))
@@ -130,11 +166,11 @@ if __name__ == "__main__":
     json_data = load_json_data("data.json")
 
     categories = {
-        "x": "disbursements", 
-        "y": "popular_votes"
+        "x": "receipts", 
+        "y": "popular_vote"
     }
 
-    plot_data = get_data(json_data, **categories)
+    plot_data = get_data(json_data, 'EXPONENTIAL', **categories)
 
     
     print('Republican {}: '.format(categories['x']), plot_data[0][0])
@@ -143,4 +179,4 @@ if __name__ == "__main__":
     print('Democrat {}: '.format(categories['x']), plot_data[1][0])
     print('Democrat {}: '.format(categories['y']), plot_data[1][1])
 
-    create_plot(plot_data, "Candidate {} vs. {}".format(categories["x"], categories["y"]), categories)
+    create_plot(plot_data, "Candidate {} vs. {}".format(categories["x"], categories["y"]), categories, 'EXPONENTIAL')
