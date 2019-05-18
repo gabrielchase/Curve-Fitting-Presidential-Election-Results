@@ -10,7 +10,7 @@ import statistics
 import matplotlib.pyplot as plt
 import numpy as np
 
-REGRESSION_TYPE = 'QUADRATIC'
+REGRESSION_TYPE = "QUADRATIC"
 
 
 def least_squares_quadratic(x_list, y_list):
@@ -140,10 +140,10 @@ def get_data(json_data, _type, **kwargs):
         x_data = d[kwargs["x"]]
         y_data = d[kwargs["y"]]
         
-        if d.get('party') == "Democrat":
+        if d.get("party") == "Democrat":
             democrat_x.append(x_data)
             democrat_y.append(y_data)
-        if d.get('party') == "Republican":
+        if d.get("party") == "Republican":
             republican_x.append(x_data)
             republican_y.append(y_data)
 
@@ -155,13 +155,13 @@ def get_data(json_data, _type, **kwargs):
     all_x = republican_x + democrat_x
     all_y = republican_y + democrat_y
 
-    if _type == 'LINEAR':
+    if _type == "LINEAR":
         constants = least_squares_linear(all_x, all_y)
     
-    if _type == 'EXPONENTIAL':
+    if _type == "EXPONENTIAL":
         constants = least_squares_exponential(all_x, all_y)
     
-    if _type == 'QUADRATIC':
+    if _type == "QUADRATIC":
         constants = least_squares_quadratic(all_x, all_y)
     
     return (republican_data, democrat_data, constants)
@@ -171,11 +171,11 @@ def create_plot(plot_data, title, categories, _type):
     ax = fig.add_subplot(1, 1, 1, axisbg="1.0")
     colors = ("red", "blue", "green")
     groups = ("Republican", "Democrat", "Least Squares Line")
-    regression_line_equation = ''
+    regression_line_equation = ""
     
     for i, (ipd, color, group) in enumerate(zip(plot_data, colors, groups)):
         print(i)
-        print('ipd: ', ipd)
+        print("ipd: ", ipd)
         # Plots X and Y points in the scatter plot
         if i != 2:
             x, y = ipd
@@ -183,32 +183,33 @@ def create_plot(plot_data, title, categories, _type):
 
         # Plots the linear regression line
         if i == 2:
-            print('in 2')
+            print("in 2")
             # Get X values for linear regression and save into x_plot
             all_x = plot_data[0][0] + plot_data[1][0]
             x_range = max(all_x) - min(all_x)
             x_increments = x_range / len(all_x)
             x_plot = list(range(0, int(max(all_x)), int(x_increments)))
             
+            # Get Y values for linear regression
             y_plot = []
             
-            if _type == 'LINEAR':
+            if _type == "LINEAR":
                 a, b = ipd
                 y_plot = [a + (b * _x) for _x in x_plot]
-                regression_line_equation = 'y = {}x + {}'.format(b, a)
-            elif _type == 'EXPONENTIAL':
+                regression_line_equation = "y = {}x + {}".format(b, a)
+            elif _type == "EXPONENTIAL":
                 a, b = ipd
                 y_plot = [math.e**(a + b * _x) for _x in x_plot]
-                regression_line_equation = 'y = e^({} + {}x)'.format(a, b)
-            elif _type == 'QUADRATIC':
+                regression_line_equation = "y = e^({} + {}x)".format(a, b)
+            elif _type == "QUADRATIC":
                 a, b, c = ipd 
                 y_plot = [a*(_x**2) +  b*_x + c for _x in x_plot]
-                regression_line_equation = 'y = {}x^2 + {}x + {} '.format(a, b, c)
+                regression_line_equation = "y = {}x^2 + {}x + {} ".format(a, b, c)
 
-            plt.plot(x_plot, y_plot, 'm-')
+            plt.plot(x_plot, y_plot, "m-")
 
     plt.ylabel(categories["y"])
-    plt.xlabel('{}\n{}'.format(categories["x"], regression_line_equation))
+    plt.xlabel("{}\n{}".format(categories["x"], regression_line_equation))
     plt.title(title)
     plt.legend(loc=2)
     plt.show()
@@ -228,10 +229,10 @@ if __name__ == "__main__":
 
     plot_data = get_data(json_data, REGRESSION_TYPE, **categories)
 
-    print('Republican {}: '.format(categories['x']), plot_data[0][0])
-    print('Republican {}: '.format(categories['y']), plot_data[0][1])
+    print("Republican {}: ".format(categories["x"]), plot_data[0][0])
+    print("Republican {}: ".format(categories["y"]), plot_data[0][1])
 
-    print('Democrat {}: '.format(categories['x']), plot_data[1][0])
-    print('Democrat {}: '.format(categories['y']), plot_data[1][1])
+    print("Democrat {}: ".format(categories["x"]), plot_data[1][0])
+    print("Democrat {}: ".format(categories["y"]), plot_data[1][1])
 
     create_plot(plot_data, "Candidate {} vs. {}".format(categories["x"], categories["y"]), categories, REGRESSION_TYPE)
