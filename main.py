@@ -10,7 +10,14 @@ import statistics
 import matplotlib.pyplot as plt
 import numpy as np
 
-REGRESSION_TYPE = "LINEAR"
+# REGRESSION_TYPES:  LINEAR EXPONENTIAL QUADRATIC
+
+REGRESSION_TYPE = "QUADRATIC"
+CATEGORIES = {
+    "x": "disbursements", 
+    "y": "popular_vote"
+}
+
 
 def get_correlation_coefficient(_type, list_1, list_2):
     assert len(list_1) == len(list_2)
@@ -55,7 +62,7 @@ def get_correlation_coefficient(_type, list_1, list_2):
             summation_y_minus_y_predicted += (y1 - y2)**2
             summation_y_minus_y_bar += (y1 - y_bar)**2
 
-        correlation_coefficient = math.sqrt((1 - (summation_y_minus_y_predicted/summation_y_minus_y_bar)))
+        correlation_coefficient = math.sqrt(abs(1 - (summation_y_minus_y_predicted/summation_y_minus_y_bar)))
 
     return correlation_coefficient
         
@@ -268,8 +275,8 @@ def create_plot(plot_data, title, categories, _type):
 
             plt.plot(x_plot, y_plot, "m-")
     
-    plt.ylabel(categories["y"])
-    plt.xlabel("{}\n{}".format(categories["x"], regression_line_equation))
+    plt.ylabel(CATEGORIES["y"])
+    plt.xlabel("{}".format(CATEGORIES["x"]))
     plt.title(title)
     plt.legend(loc=2)
     plt.show()
@@ -281,13 +288,7 @@ def load_json_data(file_name):
 
 if __name__ == "__main__":
     json_data = load_json_data("data.json")
-
-    categories = {
-        "x": "receipts", 
-        "y": "popular_vote"
-    }
-
-    plot_data = get_data(json_data, REGRESSION_TYPE, **categories)
+    plot_data = get_data(json_data, REGRESSION_TYPE, **CATEGORIES)
 
     # print("Republican {}: ".format(categories["x"]), plot_data[0][0])
     # print("Republican {}: ".format(categories["y"]), plot_data[0][1])
@@ -295,4 +296,4 @@ if __name__ == "__main__":
     # print("Democrat {}: ".format(categories["x"]), plot_data[1][0])
     # print("Democrat {}: ".format(categories["y"]), plot_data[1][1])
 
-    create_plot(plot_data, "Candidate {} vs. {}".format(categories["x"], categories["y"]), categories, REGRESSION_TYPE)
+    create_plot(plot_data, "Candidate {} vs. {}".format(CATEGORIES["x"], CATEGORIES["y"]), CATEGORIES, REGRESSION_TYPE)
