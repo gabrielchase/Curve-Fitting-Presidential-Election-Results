@@ -5,8 +5,8 @@
         "party": "Republican", 
         "receipts": 62944165,
         "disbursements": 59916222,
-        "popular_votes": 43642639,
-        "electoral_votes":  489
+        "popular_vote": 43642639,
+        "electoral_vote":  489
     },
     {
         "year": "1980", 
@@ -14,8 +14,8 @@
         "party": "Democrat", 
         "receipts": 19828843,
         "disbursements": 36227719,
-        "popular_votes": 35480948,
-        "electoral_votes":  49
+        "popular_vote": 35480948,
+        "electoral_vote":  49
     },
     {
         "year": "1984", 
@@ -23,8 +23,8 @@
         "party": "Republican", 
         "receipts": 76476619,
         "disbursements": 77202274,
-        "popular_votes": 54455075,
-        "electoral_votes": 525
+        "popular_vote": 54455075,
+        "electoral_vote": 525
     },
     {
         "year": "1984", 
@@ -32,8 +32,8 @@
         "party": "Democrat", 
         "receipts": 82879728,
         "disbursements": 79040445,
-        "popular_votes": 37577185,
-        "electoral_votes": 13
+        "popular_vote": 37577185,
+        "electoral_vote": 13
     },
     {
         "year": "1988", 
@@ -41,8 +41,8 @@
         "party": "Republican", 
         "receipts": 91349615,
         "disbursements": 88752522,
-        "popular_votes": 48886097,
-        "electoral_votes": 426
+        "popular_vote": 48886097,
+        "electoral_vote": 426
     },
     {
         "year": "1988", 
@@ -50,8 +50,8 @@
         "party": "Democrat", 
         "receipts": 90096557,
         "disbursements": 87924737,
-        "popular_votes": 41809074,
-        "electoral_votes": 111
+        "popular_vote": 41809074,
+        "electoral_vote": 111
     },
     {
         "year": "1992", 
@@ -59,8 +59,8 @@
         "party": "Republican", 
         "receipts": 101936902,
         "disbursements": 100537291,
-        "popular_votes": 39104545,
-        "electoral_votes": 168
+        "popular_vote": 39104545,
+        "electoral_vote": 168
     },
     {
         "year": "1992", 
@@ -68,8 +68,8 @@
         "party": "Democrat", 
         "receipts": 115261535,
         "disbursements": 107876226,
-        "popular_votes": 44909889,
-        "electoral_votes": 370
+        "popular_vote": 44909889,
+        "electoral_vote": 370
     },
     {
         "year": "1996", 
@@ -77,8 +77,8 @@
         "party": "Republican", 
         "receipts": 144270922.54,
         "disbursements": 140638827.15,
-        "popular_votes": 39198755,
-        "electoral_votes": 159
+        "popular_vote": 39198755,
+        "electoral_vote": 159
     },
     {
         "year": "1996", 
@@ -86,8 +86,8 @@
         "party": "Democrat", 
         "receipts": 123935797,
         "disbursements": 123646881,
-        "popular_votes": 47402357,
-        "electoral_votes": 379
+        "popular_vote": 47402357,
+        "electoral_vote": 379
     },
     {
         "year": "2000", 
@@ -95,8 +95,8 @@
         "party": "Republican", 
         "receipts": 193657728.80,
         "disbursements": 186455991.55,
-        "popular_votes": 50456002,
-        "electoral_votes": 271
+        "popular_vote": 50456002,
+        "electoral_vote": 271
     },
     {
         "year": "2000", 
@@ -104,8 +104,8 @@
         "party": "Democrat", 
         "receipts": 133108037,
         "disbursements": 120335203,
-        "popular_votes": 50999897,
-        "electoral_votes": 266
+        "popular_vote": 50999897,
+        "electoral_vote": 266
     },
     {
         "year": "2004", 
@@ -113,8 +113,8 @@
         "party": "Republican", 
         "receipts": 377846444.37,
         "disbursements": 365729978.73,
-        "popular_votes": 62028285,
-        "electoral_votes": 286
+        "popular_vote": 62028285,
+        "electoral_vote": 286
     },
     {
         "year": "2004", 
@@ -122,8 +122,8 @@
         "party": "Democrat", 
         "receipts": 351598273.53,
         "disbursements": 332804117.79,
-        "popular_votes": 59028109,
-        "electoral_votes": 251
+        "popular_vote": 59028109,
+        "electoral_vote": 251
     },
     {
         "year": "2008", 
@@ -131,8 +131,8 @@
         "party": "Republican", 
         "receipts": 401537140.35,
         "disbursements": 375159299.94,
-        "popular_votes": 59934000,
-        "electoral_votes": 173
+        "popular_vote": 59934000,
+        "electoral_vote": 173
     },
     {
         "year": "2008", 
@@ -140,8 +140,8 @@
         "party": "Democrat", 
         "receipts": 778642962.27,
         "disbursements": 760370195.37,
-        "popular_votes": 69456000,
-        "electoral_votes": 365
+        "popular_vote": 69456000,
+        "electoral_vote": 365
     },
     {
         "year": "2012", 
@@ -149,8 +149,8 @@
         "party": "Republican", 
         "receipts": 483642897.19,
         "disbursements": 483292209.77,
-        "popular_votes": 60589084,
-        "electoral_votes": 206
+        "popular_vote": 60589084,
+        "electoral_vote": 206
     },
     {
         "year": "2012", 
@@ -158,8 +158,8 @@
         "party": "Democrat", 
         "receipts": 742601913.88,
         "disbursements": 757574968.34,
-        "popular_votes": 65446032,
-        "electoral_votes": 332
+        "popular_vote": 65446032,
+        "electoral_vote": 332
     },
     {
         "year": "2016", 
@@ -167,8 +167,8 @@
         "party": "Republican", 
         "receipts": 350668435.80,
         "disbursements": 343056732.78,
-        "popular_votes": 62979636,
-        "electoral_votes": 304
+        "popular_vote": 62979636,
+        "electoral_vote": 304
     },
     {
         "year": "2016", 
@@ -176,7 +176,7 @@
         "party": "Democrat", 
         "receipts": 585699061.27,
         "disbursements": 585580576.76,
-        "popular_votes": 65844610,
-        "electoral_votes": 227
+        "popular_vote": 65844610,
+        "electoral_vote": 227
     }
 ]
